@@ -6,4 +6,3 @@ This project was built using the MERN stack
 ##
 
 Python handling all the webscraping and data extraction, nodeJS backend, and React frontend
-          
