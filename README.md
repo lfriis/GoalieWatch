@@ -18,6 +18,5 @@ Python handling all the webscraping and data extraction, nodeJS backend, and Rea
 
 ```shell
 $ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+$ ./backend/installPackages.ps1
 ```
-
-> Run **installPackages.ps1** in powershell to install all packages
