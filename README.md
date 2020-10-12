@@ -1,5 +1,5 @@
 # :rotating_light: GoalieWatch
-> A web application that allows users to set up notifications to receive emails on whether their goalie is starting that day for fantasy hockey.
+> A web application that allows users to set up notifications to receive emails on whether a users fantasy goalie is starting that day for fantasy hockey.
 
 ### Framework, Packages, & APIs
 
