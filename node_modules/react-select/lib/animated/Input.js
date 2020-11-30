@@ -1,24 +1,17 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-require('../components/Input');
-
-require('./transitions');
-
-require('../types');
+var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 // strip transition props off before spreading onto select component
 // note we need to be explicit about innerRef for flow
@@ -29,14 +22,11 @@ var AnimatedInput = function AnimatedInput(WrappedComponent) {
         appear = _ref.appear,
         enter = _ref.enter,
         exit = _ref.exit,
-        innerRef = _ref.innerRef,
-        props = _objectWithoutProperties(_ref, ['in', 'onExited', 'appear', 'enter', 'exit', 'innerRef']);
+        props = _objectWithoutProperties(_ref, ["in", "onExited", "appear", "enter", "exit"]);
 
-    return (
-      // $FlowFixMe
-      _react2.default.createElement(WrappedComponent, _extends({ innerRef: innerRef }, props))
-    );
+    return _react.default.createElement(WrappedComponent, props);
   };
 };
 
-exports.default = AnimatedInput;
+var _default = AnimatedInput;
+exports.default = _default;

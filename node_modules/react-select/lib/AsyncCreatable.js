@@ -1,21 +1,23 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = void 0;
 
-var _Async = require('./Async');
+var _Async = require("./Async");
 
-var _Creatable = require('./Creatable');
+var _Creatable = require("./Creatable");
 
-var _stateManager = require('./stateManager');
+var _stateManager = _interopRequireDefault(require("./stateManager"));
 
-var _stateManager2 = _interopRequireDefault(_stateManager);
-
-var _Select = require('./Select');
-
-var _Select2 = _interopRequireDefault(_Select);
+var _Select = _interopRequireDefault(require("./Select"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (0, _Async.makeAsyncSelect)((0, _stateManager2.default)((0, _Creatable.makeCreatableSelect)(_Select2.default)));
+var SelectCreatable = (0, _Creatable.makeCreatableSelect)(_Select.default);
+var SelectCreatableState = (0, _stateManager.default)(SelectCreatable);
+
+var _default = (0, _Async.makeAsyncSelect)(SelectCreatableState);
+
+exports.default = _default;

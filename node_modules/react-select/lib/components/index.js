@@ -1,80 +1,69 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.defaultComponents = exports.components = undefined;
+exports.defaultComponents = exports.components = void 0;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _containers = require("./containers");
 
-require('react');
+var _indicators = require("./indicators");
 
-var _containers = require('./containers');
+var _Control = _interopRequireDefault(require("./Control"));
 
-var _indicators = require('./indicators');
+var _Group = _interopRequireWildcard(require("./Group"));
 
-var _Control = require('./Control');
+var _Input = _interopRequireDefault(require("./Input"));
 
-var _Control2 = _interopRequireDefault(_Control);
+var _Menu = _interopRequireWildcard(require("./Menu"));
 
-var _Group = require('./Group');
+var _MultiValue = _interopRequireWildcard(require("./MultiValue"));
 
-var _Group2 = _interopRequireDefault(_Group);
+var _Option = _interopRequireDefault(require("./Option"));
 
-var _Input = require('./Input');
+var _Placeholder = _interopRequireDefault(require("./Placeholder"));
 
-var _Input2 = _interopRequireDefault(_Input);
+var _SingleValue = _interopRequireDefault(require("./SingleValue"));
 
-var _Menu = require('./Menu');
-
-var _Menu2 = _interopRequireDefault(_Menu);
-
-var _MultiValue = require('./MultiValue');
-
-var _MultiValue2 = _interopRequireDefault(_MultiValue);
-
-var _Option = require('./Option');
-
-var _Option2 = _interopRequireDefault(_Option);
-
-var _Placeholder = require('./Placeholder');
-
-var _Placeholder2 = _interopRequireDefault(_Placeholder);
-
-var _SingleValue = require('./SingleValue');
-
-var _SingleValue2 = _interopRequireDefault(_SingleValue);
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var components = exports.components = {
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var components = {
   ClearIndicator: _indicators.ClearIndicator,
-  Control: _Control2.default,
+  Control: _Control.default,
   DropdownIndicator: _indicators.DropdownIndicator,
   DownChevron: _indicators.DownChevron,
   CrossIcon: _indicators.CrossIcon,
-  Group: _Group2.default,
+  Group: _Group.default,
   GroupHeading: _Group.GroupHeading,
   IndicatorsContainer: _containers.IndicatorsContainer,
   IndicatorSeparator: _indicators.IndicatorSeparator,
-  Input: _Input2.default,
+  Input: _Input.default,
   LoadingIndicator: _indicators.LoadingIndicator,
-  Menu: _Menu2.default,
+  Menu: _Menu.default,
   MenuList: _Menu.MenuList,
   MenuPortal: _Menu.MenuPortal,
   LoadingMessage: _Menu.LoadingMessage,
   NoOptionsMessage: _Menu.NoOptionsMessage,
-  MultiValue: _MultiValue2.default,
+  MultiValue: _MultiValue.default,
   MultiValueContainer: _MultiValue.MultiValueContainer,
   MultiValueLabel: _MultiValue.MultiValueLabel,
   MultiValueRemove: _MultiValue.MultiValueRemove,
-  Option: _Option2.default,
-  Placeholder: _Placeholder2.default,
+  Option: _Option.default,
+  Placeholder: _Placeholder.default,
   SelectContainer: _containers.SelectContainer,
-  SingleValue: _SingleValue2.default,
+  SingleValue: _SingleValue.default,
   ValueContainer: _containers.ValueContainer
 };
+exports.components = components;
 
-var defaultComponents = exports.defaultComponents = function defaultComponents(props) {
-  return _extends({}, components, props.components);
+var defaultComponents = function defaultComponents(props) {
+  return _objectSpread({}, components, props.components);
 };
+
+exports.defaultComponents = defaultComponents;

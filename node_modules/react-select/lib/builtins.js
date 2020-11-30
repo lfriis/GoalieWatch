@@ -1,20 +1,30 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var formatGroupLabel = exports.formatGroupLabel = function formatGroupLabel(group) {
+exports.isOptionDisabled = exports.getOptionValue = exports.getOptionLabel = exports.formatGroupLabel = void 0;
+
+var formatGroupLabel = function formatGroupLabel(group) {
   return group.label;
 };
 
-var getOptionLabel = exports.getOptionLabel = function getOptionLabel(option) {
+exports.formatGroupLabel = formatGroupLabel;
+
+var getOptionLabel = function getOptionLabel(option) {
   return option.label;
 };
 
-var getOptionValue = exports.getOptionValue = function getOptionValue(option) {
+exports.getOptionLabel = getOptionLabel;
+
+var getOptionValue = function getOptionValue(option) {
   return option.value;
 };
 
-var isOptionDisabled = exports.isOptionDisabled = function isOptionDisabled(option) {
+exports.getOptionValue = getOptionValue;
+
+var isOptionDisabled = function isOptionDisabled(option) {
   return !!option.isDisabled;
 };
+
+exports.isOptionDisabled = isOptionDisabled;

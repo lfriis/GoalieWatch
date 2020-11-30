@@ -10,44 +10,23 @@ Cron job scheduler calling NHL API data scrape
 */
 
 // Declarations and packages included
-try
-{
-  var express        = require('express');
-  var app            = express();
-  var mongoose       = require('mongoose');
-  var cron           = require('node-cron');
-  var shell          = require('shelljs');
-  var cors           = require('cors');
-  var session        = require('express-session');
-  var port           = 8080;
+const express  = require('express');
+const app      = express();
+const mongoose = require('mongoose');
+const cron     = require('node-cron');
+const shell    = require('shelljs');
+const cors     = require('cors');
+const port     = 8080;
 
-  // Including environemnt variable that posses connection string to MongoDB
-  require('dotenv').config();
+// Including environemnt variable that posses connection string to MongoDB
+require('dotenv').config();
 
-  const sessionSecret = process.env.SESSION_SECRET;
-  const sessionName   = process.env.SESSION_NAME;
+// const sessionSecret = process.env.SESSION_SECRET;
+// const sessionName   = process.env.SESSION_NAME;
 
-  // Including required middleware
-  app.use(cors());
-  app.use(express.json());
-  
-  // Setting session variable and cookie for each users sessions
-  app.set('trust proxy', 1)
-  app.use(session ({
-    name: sessionName,
-    resave: false,
-    saveUninitialized: false,
-    secret: sessionSecret,
-    cookie: {
-      maxAge: 60000,
-      sameSite: "strict",
-      secure: true
-    },
-  }));
-
-  console.log("\nAll necessary packages included...");
-}
-catch(e) {console.log("Errors including packages: " + (e));}
+// Including required middleware
+app.use(cors());
+app.use(express.json());
 
 // Connecting to Atlas MongoDB
 try 
@@ -90,5 +69,5 @@ cron.schedule("* * 1 * * *", function() {
 // Listening to requests sent by client
 app.listen(port, function() 
 {
-  console.log('Server deployed...\n' + 'Listening at address localhost:' + port + '\n');
+  console.log('Server deployed...\nListening at address localhost:' + port + '\n');
 });
